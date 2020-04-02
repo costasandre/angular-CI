@@ -6,10 +6,20 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "standardx **/*.ts",
     "e2e": "ng e2e"
   },
   "private": true,
+  "eslintConfig": {
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error"
+    }
+  },
+  "standardx": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [ "@typescript-eslint/eslint-plugin" ]
+  },
   "dependencies": {
     "@angular/animations": "~9.0.5",
     "@angular/common": "~9.0.5",
@@ -28,9 +38,11 @@
     "@angular/cli": "~9.0.5",
     "@angular/compiler-cli": "~9.0.5",
     "@angular/language-service": "~9.0.5",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -40,6 +52,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.3",
+    "standardx": "^5.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
